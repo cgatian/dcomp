@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivationService } from './dynamic/services/activation.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private activationService: ActivationService) {
+
+  }
+
+  send() {
+    this.activationService.activate('popup', {});
+  }
+
 }

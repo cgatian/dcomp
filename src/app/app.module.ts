@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NgModuleFactoryLoader, SystemJsNgModuleLoader } from '@angular/core';
+import { RouterModule, ROUTES } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
+import { DynamicModule } from './dynamic/dynamic.module';
 
 
 @NgModule({
@@ -10,9 +12,13 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    DynamicModule,
+    RouterModule.forRoot([
+    ]),
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
